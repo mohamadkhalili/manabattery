@@ -1,0 +1,50 @@
+[
+  {
+    "icon": "desktop-classic",
+    "type": "computer",
+    "title": "کامپیوتر",
+    "wat": 320,
+    "va": null,
+    "coefficient": 0.9
+  },
+  {
+    "icon": "fridge-top",
+    "type": "refrigerator",
+    "title": "یخچال",
+    "wat": 200,
+    "va": null,
+    "coefficient": 0.8
+  },
+  {
+    "icon": "cellphone-basic",
+    "type": "cellphonebasic",
+    "title": "شارژ موبایل",
+    "wat": 10,
+    "va": null,
+    "coefficient": 0.9
+  },
+  {
+    "icon": "laptop",
+    "type": "laptop",
+    "title": "لپ تاپ",
+    "wat": 100,
+    "va": null,
+    "coefficient": 0.9
+  },
+  {
+    "icon": "fridge-top",
+    "type": "refrigerator",
+    "title": "یخچال",
+    "wat": null,
+    "va": 1000,
+    "coefficient": 0.7
+  },
+  {
+    "icon": "printer",
+    "type": "printer",
+    "title": "پرینتر",
+    "wat": 450,
+    "va": null,
+    "coefficient": 0.9
+  }
+]
