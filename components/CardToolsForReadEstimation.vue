@@ -1,5 +1,5 @@
 <template>
-  <v-card width="180px" v-show="data.type" class="ma-2">
+  <v-card width="180px" max-height="300px" v-show="data.type" class="ma-2">
     <v-card-actions>
       <v-row>
         <span style="direction: ltr" class="pa-4 pt-5">

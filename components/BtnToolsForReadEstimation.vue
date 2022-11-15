@@ -2,6 +2,7 @@
   <v-tooltip v-if="tooltip !== null" color="secondary" left>
     <template #activator="{ on, attrs }">
       <v-btn
+        class="ma-2"
         color="secondary"
         x-large
         icon
@@ -9,12 +10,12 @@
         v-on="on"
         @click="$emit('add', type)"
       >
-        <v-icon v-show="icon">
+        <v-icon x-large v-show="icon">
           {{ 'mdi-' + icon }}
         </v-icon>
       </v-btn>
     </template>
-    <span>{{ tooltip }}</span>
+    <span style="direction: rtl !important">{{ tooltip }}</span>
   </v-tooltip>
   <v-btn v-else color="secondary" x-large icon @click="$emit('add', type)">
     <v-icon v-show="icon">

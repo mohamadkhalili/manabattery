@@ -46,5 +46,85 @@
     "wat": 450,
     "va": null,
     "coefficient": 0.9
+  },
+  {
+    "icon": "television-classic",
+    "type": "TV_LED_32",
+    "title": "تلویزیون (LED) 32 اینج",
+    "wat": 60,
+    "va": null,
+    "coefficient": 0.9
+  },
+  {
+    "icon": "television-classic",
+    "type": "TV_LED_42",
+    "title": "تلویزیون (LED) 42 اینج",
+    "wat": 60,
+    "va": null,
+    "coefficient": 0.9
+  },
+  {
+    "icon": "television-classic",
+    "type": "TV_LED_46",
+    "title": "تلویزیون (LED) 46 اینج",
+    "wat": 70,
+    "va": null,
+    "coefficient": 0.9
+  },
+  {
+    "icon": "television-classic",
+    "type": "TV_LED_49",
+    "title": "تلویزیون (LED) 49 اینج",
+    "wat": 85,
+    "va": null,
+    "coefficient": 0.9
+  },
+  {
+    "icon": "television-classic",
+    "type": "TV_LED_55",
+    "title": "تلویزیون (LED) 55 اینج",
+    "wat": 116,
+    "va": null,
+    "coefficient": 0.9
+  },
+  {
+    "icon": "television-classic",
+    "type": "TV_LED_65",
+    "title": "تلویزیون (LED) 65 اینج",
+    "wat": 130,
+    "va": null,
+    "coefficient": 0.9
+  },
+  {
+    "icon": "television-classic",
+    "type": "TV_LED_82",
+    "title": "تلویزیون (LED) 82 اینج",
+    "wat": 295,
+    "va": null,
+    "coefficient": 0.9
+  },
+  {
+    "icon": "fishbowl",
+    "type": "Aquarium_Pump ",
+    "title": "پمپ آکواریوم",
+    "wat": 50,
+    "va": null,
+    "coefficient": 0.9
+  },
+  {
+    "icon": "scanner",
+    "type": "copy",
+    "title": "دستگاه فتوکپی",
+    "wat": 1500,
+    "va": null,
+    "coefficient": 0.9
+  },
+  {
+    "icon": "fax",
+    "type": "fax",
+    "title": "فکس",
+    "wat": 35,
+    "va": null,
+    "coefficient": 0.9
   }
 ]

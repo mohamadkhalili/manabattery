@@ -2,7 +2,7 @@
   <div class="ma-6">
     <v-card class="pa-6" width="100%" height="100%" shaped>
       <v-row>
-        <div style="width: 100px !important; display: block">
+        <div style="width: 145px !important; display: flex; flex-wrap: inherit">
           <btn-tools-for-read-estimation
             v-for="(item, index) in allObjects"
             :key="index"
@@ -20,6 +20,16 @@
           ></card-tools-for-read-estimation>
         </v-row>
       </v-row>
+      <v-text-field
+        v-model="time"
+        class="mt-8"
+        outlined
+        dense
+        style="max-width: 400px"
+        label="مدت زمان(دقیقه)"
+        hint="لطفا مدت زمان استفاده از تجهیزات انتخاب شده را وارد کنید."
+      ></v-text-field>
+
       <div class="mt-10 mr-4">
         <div>
           مجموع وات:
@@ -38,7 +48,7 @@
           <span>{{ (getSumOfWat / getSumOfVa).toFixed(2) }}</span>
         </div>
       </div>
-      <print-page />
+      <print-page :time="time" />
     </v-card>
   </div>
 </template>
@@ -51,6 +61,11 @@ export default {
   name: 'IndexPage',
   components: {
     PrintPage,
+  },
+  data() {
+    return {
+      time: null,
+    }
   },
   computed: {
     allObjects() {
