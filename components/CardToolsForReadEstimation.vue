@@ -1,5 +1,5 @@
 <template>
-  <v-card width="180px" max-height="300px" v-show="data.type" class="ma-2">
+  <v-card width="180px" max-height="320px" v-show="data.type" class="ma-2">
     <v-card-actions>
       <v-row>
         <span style="direction: ltr" class="pa-4 pt-5">
@@ -11,11 +11,7 @@
           class="ma-2 mt-3"
           icon
           @click="
-            () =>
-              this.$store.commit(
-                'batteryStimation/deleteObjectItem',
-                this.$vnode.key
-              )
+            () => this.$store.commit('batteryStimation/deleteObjectItem', index)
           "
         >
           <v-icon> mdi-delete </v-icon>
@@ -35,7 +31,7 @@
             (event) =>
               this.$store.commit('batteryStimation/changeObjectWat', {
                 wat: parseInt(event),
-                key: this.$vnode.key,
+                key: index,
               })
           "
           label="wat(وات)"
@@ -53,7 +49,7 @@
             (event) =>
               this.$store.commit('batteryStimation/changeObjectVa', {
                 va: parseInt(event),
-                key: this.$vnode.key,
+                key: index,
               })
           "
           label="VA(ولت آمپر)"
@@ -61,6 +57,24 @@
           dense
           hide-details
         ></v-text-field>
+        <v-text-field
+          :value="data.count ? data.count : 1"
+          @input="
+            (event) =>
+              this.$store.commit('batteryStimation/changeObjectNumber', {
+                count: parseInt(event),
+                key: index,
+              })
+          "
+          class="mx-2 mb-2"
+          style="width: 50%"
+          outlined
+          dense
+          hide-details
+          type="number"
+          label="تعداد"
+        >
+        </v-text-field>
       </v-col>
     </v-row>
   </v-card>
@@ -69,12 +83,15 @@
 <script>
 export default {
   name: 'CardToolsForReadEstimation',
-  props: {},
+  props: {
+    index: {
+      type: Number,
+      default: -1,
+    },
+  },
   computed: {
     data() {
-      return this.$store.getters['batteryStimation/getObjectItem'](
-        this.$vnode.key
-      )
+      return this.$store.getters['batteryStimation/getObjectItem'](this.index)
     },
   },
 }

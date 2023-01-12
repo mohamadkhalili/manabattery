@@ -5,7 +5,7 @@
       @click="generateReport"
       class="mt-4 primary mr-4"
     >
-      دریافت خروجی
+      دریافت گزارش تخمین بار الکتریکی
     </v-btn>
     <p class="mt-4 mr-4" v-if="activeOutput">لطفا اطلاعات را تکمیل نمایید.</p>
     <vue-html2pdf
@@ -41,11 +41,11 @@
               نکته لازم به نظر می‌رسد:
             </p>
             <p style="text-align: justify">
-              1- مصرفی دستگاههای نرمال موجود در بازار را پوشش می‌دهند و اگر
-              کاربر از دستگاه خاصی استفاده می‌کند (مانند کامپیوترهای گیمینگ،
-              پرینترهای چاپخانه‌ای و...) میزان توان باید براساس توان مصرفی واقعی
-              آن تجهیز وارد شود لذا قابلیت وارد کردن توان بصورت دستی در سیستم
-              تخمین بار درنظرگرفته شده است.
+              1- بارهای ارائه شده در نرم افزار بار مصرفی دستگاههای نرمال موجود
+              در بازار را پوشش می‌دهند و اگر کاربر از دستگاه خاصی استفاده می‌کند
+              (مانند کامپیوترهای گیمینگ، پرینترهای چاپخانه‌ای و...) میزان توان
+              باید براساس توان مصرفی واقعی آن تجهیز وارد شود لذا قابلیت وارد
+              کردن توان بصورت دستی در سیستم تخمین بار درنظرگرفته شده است.
             </p>
             <p style="text-align: justify">
               2- جهت حصول اطمینان از تخمین بار و در نهایت سایزینگ مناسب تجهیز
@@ -104,7 +104,9 @@
                   <v-divider vertical />
                   <v-col cols="3">نام دستگاه</v-col>
                   <v-divider vertical />
-                  <v-col cols="3">توان اکتیو مصرفی (W)</v-col>
+                  <v-col cols="1">تعداد</v-col>
+                  <v-divider vertical />
+                  <v-col cols="2">توان اکتیو مصرفی (W)</v-col>
                   <v-divider vertical />
                   <v-col cols="2">ضریب توان (P.F)</v-col>
                   <v-divider vertical />
@@ -122,7 +124,9 @@
                   <v-divider vertical />
                   <v-col cols="3">{{ object.title }}</v-col>
                   <v-divider vertical />
-                  <v-col cols="3"
+                  <v-col cols="1">{{ object.count }} </v-col>
+                  <v-divider vertical />
+                  <v-col cols="2"
                     >{{
                       object.wat
                         ? object.wat
@@ -148,9 +152,9 @@
               <v-col>
                 <v-row>
                   <v-divider vertical />
-                  <v-col cols="4" style="font-weight: bold">بار مصرفی</v-col>
+                  <v-col cols="5" style="font-weight: bold">بار مصرفی</v-col>
                   <v-divider vertical />
-                  <v-col cols="3">{{ getSumOfWat.toFixed(2) }}</v-col>
+                  <v-col cols="2">{{ getSumOfWat.toFixed(2) }}</v-col>
                   <v-divider vertical />
                   <v-col cols="2"
                     >{{ (getSumOfWat / getSumOfVa).toFixed(2) }}
@@ -166,17 +170,21 @@
               <v-col>
                 <v-row>
                   <v-divider vertical />
-                  <v-col cols="4" style="font-weight: bold"
+                  <v-col cols="5" style="font-weight: bold"
                     >بار مصرفی با 20% مازاد (Spare)
                   </v-col>
                   <v-divider vertical />
-                  <v-col cols="3">{{ getSumOfWat.toFixed(2) * 1.2 }}</v-col>
+                  <v-col cols="2">{{
+                    (getSumOfWat.toFixed(2) * 1.2).toFixed(2)
+                  }}</v-col>
                   <v-divider vertical />
                   <v-col cols="2"
                     >{{ (getSumOfWat / getSumOfVa).toFixed(2) }}
                   </v-col>
                   <v-divider vertical />
-                  <v-col cols="3">{{ getSumOfVa.toFixed(2) * 1.2 }}</v-col>
+                  <v-col cols="3">{{
+                    (getSumOfVa.toFixed(2) * 1.2).toFixed(2)
+                  }}</v-col>
                   <v-divider style="margin-right: 3px" vertical />
                 </v-row>
               </v-col>
@@ -249,7 +257,7 @@ export default {
           {
             data: [120, 120],
             label: 'KW',
-            borderColor: '#3e95cd',
+            borderColor: '#12a753',
             fill: true,
           },
         ],

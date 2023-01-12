@@ -16,6 +16,7 @@
           <card-tools-for-read-estimation
             v-for="(item, index) in objectList"
             :key="index"
+            :index="index"
             :data="item"
           ></card-tools-for-read-estimation>
         </v-row>
@@ -54,13 +55,15 @@
 </template>
 
 <script>
+import CardToolsForReadEstimation from '../components/CardToolsForReadEstimation'
 import allObjects from '~/components/objectList.json'
-import PrintPage from '@/components/PrintPage'
+import PrintPage from '~/components/PrintPage'
 
 export default {
   name: 'IndexPage',
   components: {
     PrintPage,
+    CardToolsForReadEstimation,
   },
   data() {
     return {

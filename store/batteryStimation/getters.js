@@ -7,11 +7,11 @@ export default {
     let sumVa = 0
     state.objectList.forEach((object) => {
       if (object.wat) {
-        sumVa += object.wat / object.coefficient
-        sumWat += object.wat
+        sumVa += (object.wat * object.count) / object.coefficient
+        sumWat += object.wat * object.count
       } else if (object.va) {
-        sumVa += object.va
-        sumWat += object.va * object.coefficient
+        sumVa += object.va * object.count
+        sumWat += object.va * object.coefficient * object.count
       }
     })
     return { sumWat, sumVa }
